@@ -265,6 +265,7 @@ gh aw compile --validate
 
 - For complete documentation, load `.github/aw/github-agentic-workflows.md` from the resolved guidance repository/ref.
 - Use gh-aw MCP tools only when exposed and authorized; otherwise use available CLI, cached evidence or static source through the CLI/MCP reference.
+- When creating or editing agentic workflow files, do not compile them. Only create or update the markdown workflow file.
 - Workflows must be compiled to `.lock.yml` files before running in GitHub Actions
 - **Bash tools are enabled by default** - Don't restrict bash commands unnecessarily since workflows are sandboxed by the AWF
 - Follow security best practices: minimal permissions, explicit network access, no template injection
@@ -272,3 +273,4 @@ gh aw compile --validate
 - **Single-file output**: When creating a workflow, produce exactly **one** workflow `.md` file. Do not create separate documentation files (architecture docs, runbooks, usage guides, etc.). If documentation is needed, add a brief `## Usage` section inside the workflow file itself.
 - **Triggering runs**: Only where permitted and human-validated under `debug-agentic-workflow.md`, prefer `gh aw run <workflow-name>` over `gh workflow run <file>.lock.yml` for workflow resolution, input validation and run-tracking. Use the reviewed remote ref; explicit no-dispatch rules override user requests.
 - **CLI commands reference**: For a complete guide on all `gh aw` commands and their MCP tool equivalents (for restricted environments), see `https://raw.githubusercontent.com/github/gh-aw/main/.github/aw/cli-commands.md`
+
